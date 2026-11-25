@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1111111-1111-1111-1111-111111111111}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SalonPOS.Program</StartupObject>
+    <RootNamespace></RootNamespace>
+    <AssemblyName>SalonPOS</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.vb" />
+    <Compile Include="Models\User.vb" />
+    <Compile Include="Models\Employee.vb" />
+    <Compile Include="Models\EmployeeHRModels.vb" />
+    <Compile Include="Models\Chair.vb" />
+    <Compile Include="Models\Customer.vb" />
+    <Compile Include="Models\ServiceCategory.vb" />
+    <Compile Include="Models\ServiceItem.vb" />
+    <Compile Include="Models\ServiceExtra.vb" />
+    <Compile Include="Models\ChairSession.vb" />
+    <Compile Include="Models\Sale.vb" />
+    <Compile Include="Models\OperationalModels.vb" />
+    <Compile Include="Models\SalonSettings.vb" />
+    <Compile Include="Models\ActivityLog.vb" />
+    <Compile Include="DTOs\DailySummaryDto.vb" />
+    <Compile Include="Data\DbConnectionFactory.vb" />
+    <Compile Include="Data\DatabaseInitializer.vb" />
+    <Compile Include="Data\Repositories\ChairRepository.vb" />
+    <Compile Include="Data\Repositories\ServiceRepository.vb" />
+    <Compile Include="Data\Repositories\SessionRepository.vb" />
+    <Compile Include="Data\Repositories\SaleRepository.vb" />
+    <Compile Include="Data\Repositories\MasterRepositories.vb" />
+    <Compile Include="Data\Repositories\EmployeeHRRepository.vb" />
+    <Compile Include="Data\Repositories\ShiftAndUserRepositories.vb" />
+    <Compile Include="Data\Repositories\SettingsRepository.vb" />
+    <Compile Include="Data\Repositories\ActivityLogRepository.vb" />
+    <Compile Include="Services\AuthService.vb" />
+    <Compile Include="Services\ReportService.vb" />
+    <Compile Include="Services\BackupService.vb" />
+    <Compile Include="Licensing\MachineFingerprint.vb" />
+    <Compile Include="Licensing\AppPublicKey.vb" />
+    <Compile Include="Licensing\LicenseValidator.vb" />
+    <Compile Include="Printing\ReceiptPrinter.vb" />
+    <Compile Include="Controls\ChairCardControl.vb" />
+    <Compile Include="Controls\ServiceCardControl.vb" />
+    <Compile Include="Controls\ExtraToggleButton.vb" />
+    <Compile Include="Forms\FrmMain.vb" />
+    <Compile Include="Forms\FrmDashboardChairs.vb" />
+    <Compile Include="Forms\FrmStartServiceModal.vb" />
+    <Compile Include="Forms\FrmPOS.vb" />
+    <Compile Include="Forms\FrmPaymentModal.vb" />
+    <Compile Include="Forms\FrmQuickCustomerModalAndShift.vb" />
+    <Compile Include="Forms\FrmExpenses.vb" />
+    <Compile Include="Forms\FrmReports.vb" />
+    <Compile Include="Forms\FrmEmployeesAndPayroll.vb" />
+    <Compile Include="Forms\FrmProcessSalaryModal.vb" />
+    <Compile Include="Forms\FrmCustomersAndSettings.vb" />
+    <Compile Include="Forms\FrmAdminManagement.vb" />
+    <Compile Include="Forms\FrmLicenseActivation.vb" />
+    <Compile Include="Forms\FrmUserModal.vb" />
+    <Compile Include="Forms\FrmLogin.vb" />
+    <Compile Include="Helpers\SecurityHelper.vb" />
+    <Compile Include="Helpers\UIStyleHelper.vb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

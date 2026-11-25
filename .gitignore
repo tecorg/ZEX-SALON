@@ -1,0 +1,36 @@
+## Visual Studio / .NET
+.vs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.pidb
+*.booproj
+*.svclog
+
+## Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## NuGet
+packages/
+*.nupkg
+nuget.exe
+*.nuget.props
+*.nuget.targets
+
+## Compressed archives
+*.rar
+*.zip
+*.7z
+
+## Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+Thumbs.db
+ehthumbs.db
+Desktop.ini
